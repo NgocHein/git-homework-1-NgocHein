@@ -1,3 +1,5 @@
+1.Part B-1
+
 On branch master
 
 Untracked files:
@@ -9,6 +11,8 @@ Untracked files:
 
 
 nothing added to commit but untracked files present (use "git add" to track)
+
+2.Part B-2
 
 On branch master
 
@@ -30,7 +34,7 @@ Untracked files:
 
 &#x20;       status\_log.md
 
-diff --git a/part1/notes.txt b/part1/notes.txt
+3\.diff --git a/part1/notes.txt b/part1/notes.txt
 
 index e69de29..c0b40ff 100644
 
@@ -48,14 +52,36 @@ index e69de29..c0b40ff 100644
 
 \\ No newline at end of file
 
-Lệnh "Git commit -a .." chỉ hoạt động với các files đã được theo dõi với lí do:
+
+
+4.diff --git a/part1/notes.txt b/part1/notes.txt
+
+index e69de29..c0b40ff 100644
+
+\--- a/part1/notes.txt
+
++++ b/part1/notes.txt
+
+@@ -0,0 +1,3 @@
+
++Nguyen Ngoc Hien
+
++B25DCTN039
+
++D25CTTN01-B
+
+\\ No newline at end of file
+
+
+
+5\. Lệnh "Git commit -a .." chỉ hoạt động với các files đã được theo dõi với lí do:
 
 * để tránh lưu file rác vào Git
 * Git tuân theo nguyên tắc chỉ quản lí những gì người dùng chủ động yêu cầu( hoạt động với file đã được git add trước đó)
 
-Difference between git fetch and git pull:
+6\. Difference between git fetch and git pull:
 
-\- git fetch: Tải các thông tin và commit mới nhất từ remote repository về máy local nhưng chưa tự động gộp vào thư mục làm việc.
+\- git fetch: Tải các thông tin và commit mới nhất từ remote repository về máy local nhưng chưa tự động gộp(merge) vào thư mục làm việc.
 
-\- git pull: Tải dữ liệu mới về và tự động gộp ngay vào nhánh làm việc ở máy local.
+\- git pull: Tải dữ liệu mới về và tự động gộp ngay vào nhánh làm việc ở máy local (tương đương với git fetch + git merge).
 
