@@ -37,3 +37,8 @@ index e69de29..0bd0ce1 100644
 +Dong 1
 +Dong 2
 +Dong 3
+--- GIẢI THÍCH LỆNH GIT COMMIT -A ---
+Lệnh 'git commit -a' chỉ tự động stage và commit đối với các file ĐÃ ĐƯỢC TRACK (tracked files - các file đã từng dùng 'git add' trước đây). Nó sẽ bỏ qua các file mới tạo lần đầu (untracked files, như draft.md).
+--- SO SÁNH GIT FETCH VÀ GIT PULL ---
+- git fetch: Tải các dữ liệu/commit mới nhất từ remote về máy local nhưng KHÔNG tự động gộp (merge) vào mã nguồn hiện tại của bạn.
+- git pull: Là kết hợp của (git fetch + git merge). Nó vừa tải commit mới về vừa TỰ ĐỘNG GỘP trực tiếp vào branch local hiện tại.
