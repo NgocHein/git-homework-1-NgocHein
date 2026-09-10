@@ -1,0 +1,55 @@
+
+PART A
+1: cd ~ && mkdir ex3
+2: cd ex3
+3: mkdir dir1 dir2
+4: touch HelloWorld.txt && cp HelloWorld.txt dir1/
+5: cp -i HelloWorld.txt dir1/
+6: mv HelloWorld.txt Hi.txt
+7: mv Hi.txt dir2/
+PART B
+1:
+ln dir2/Hi.txt Hi-hard
+ln dir2/Hi.txt dir1/Hi-hard
+ln dir2/Hi.txt dir2/Hi-hard
+2: ln -s dir2/Hi.txt Hi-sym
+3: rm Hi-hard
+4: rm dir2/Hi.txt
+5: ls -li 
+total 0
+14918173766106483 -rw-r--r-- 1 AD 197121 0 Sep 10 23:15 Hi-sym
+13229323905550979 drwxr-xr-x 1 AD 197121 0 Sep 10 23:18 dir1/
+ 9570149208352464 drwxr-xr-x 1 AD 197121 0 Sep 10 23:19 dir2/
+PART C
+1: ls /bin /usr/bin | sort | uniq | wc -l
+2: ls /bin /usr/bin | sort | uniq | grep "zip"
+3:
+Tạo file 30 dòng: seq 1 30 > myfile.txt (hoặc tự tạo bằng nano myfile.txt)
+head -n 5 myfile.txt
+tail -n 5 myfile.txt
+wc myfile.txt
+4: ls -la | tee full_listing.txt
+PART D
+1:
+mkdir permissions && cd permissions
+touch secret.txt shared.txt public.txt
+chmod 600 secret.txt
+chmod 664 shared.txt
+chmod 777 public.txt
+2:
+umask
+touch testfile.txt
+ls -l testfile.txt
+Giải thích: 
+1. Kết quả kiểm tra umask:
+   Giá trị umask của hệ thống là 0022.
+
+2. Lý do file mới tạo có quyền rw-r--r-- (644):
+   - Trong Linux, quyền hạn mặc định tối đa khi tạo một file mới là 666 (rw-rw-rw-).
+   - Hệ thống áp dụng công thức: Quyền thực tế = Quyền mặc định (666) - Giá trị umask (022).
+   - Phép tính: 666 - 022 = 644 (tương ứng với rw-r--r--).
+
+   Vì vậy:
+   - Owner (Chủ sở hữu): Có quyền Read & Write (6)
+   - Group (Nhóm): Chỉ có quyền Read (4)
+   - Others (Người khác): Chỉ có quyền Read (4)
